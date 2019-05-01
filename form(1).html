@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title id='title'>Basic Form</title>
+<meta charset='utf-8'>
+<style type='text/css'>
+html {
+
+}
+body {
+/*box-shadow: 0 0 5px silver;*/
+box-sizing: content-box;
+width: 100%;
+background-color: rgba(0, 255, 0, 0.4);
+}
+h1 {
+	text-align: center;
+	background: url('back.png');
+	font-family: fantasy;
+}
+form {
+	box-shadow: 0 0 10px silver;
+	max-width: 1000px;
+	margin: 35px;
+	background: white;
+	font-family: fantasy;
+	font-size: 16px;
+}
+#title {
+	background: url('back.png') no-repeat top left;
+}
+li {
+	list-style-type: none;
+}
+li:hover {
+	color: green;
+}
+input, select {
+	font-size: 18px;
+	border-radius: 4px;
+	background: silver;
+}
+input:hover {
+	border-color: green;
+}
+.tooltip {
+	display: block;
+	position: relative;
+
+}
+.tooltip .tooltiptext {
+	visibility: hidden;
+    position: absolute;
+}
+.tooltip:hover .tooltiptext {
+	visibility: visible;
+}
+.warning {
+    font-family: monospace;
+    height: 50px;
+    width: 90%;
+    text-overflow: ellipsis;
+    text-align: center;
+    font-size: 1em;
+    overflow: hidden;
+}
+.alert {
+   color: red;
+}
+div.animation {
+position: relative;
+left: 0;
+top: 0;
+height: 150px;
+width: 300px;
+border-radius: 8px;
+box-shadow: 0px 5px 10px 0px silver;
+text-overflow: ellipsis;
+color: #ffffff;
+background: blue;
+text-align: center;
+animation-name: dojo;
+animation-duration: 10s;
+animation-iteration-count: infinite;
+animation-direction: alternate;
+animation-timing-function: linear;
+}
+@keyframes dojo {
+	0% {
+          background-color: blue;
+          top: 0px;
+          left: 0px;
+	}
+	50% {
+        background-color: green;
+        /*transform: translate(50px, 15px);*/
+        /*transform: scale(1.2, 1.1);*/
+        left: 37%;
+
+	}
+	100% {
+		background: red;
+		/*transform: scale(1.5, 1.3);*/
+		left: 74%;
+	}
+}
+</style>
+<script type='text/script'></script>
+</head>
+<body>
+<h1>Admission Application Form (Nigerian Residents only)</h1>
+<div class='animation'>
+	<p><b>Please note</b><br>This is an admission application form, Applicants are adviced to fill the details as it applies to them as any falsification nullifies the applicant`s chance of being picked.</p>
+</div>
+<form action='' method='post'>
+<fieldset>
+	<legend>Personal Information</legend>
+<p>
+	Name <br /><br /><input type='text' maxlength='25' placeholder='e.g Jane Joe Doe' required>
+</p>
+<p>Country of Origin <br /><br /><input type='text' list='nationality' required>
+<datalist id='nationality'>
+	<option value='Angola'>
+	<option value='Burkinafaso'>
+	<option value='Cote D`voire'>
+	<option value='Nigeria'>
+	<option value='Ghana'>
+	<option value='Togo'>
+	<option value='Niger'>
+	<option value='South Africa'>
+	<option value='Egypt'>
+	<option value='Cotonou'>
+	<option value='Brazil'>
+	<option value='Portugal'>
+	<option value='Gabon'>
+	<option value='Kenya'>
+	<option value='Others'>
+	<option value='Gambia'>
+	<option value='Senegal'>
+	<option value='Ethopia'>
+	<option value='Republic of Benin'>
+	<option value='Republic of Congo'>
+</datalist>
+</p>
+<p>State of Origin/Region <br /><br /><input type='text' maxlength='45' required></p>
+<p>Phone number <br /><br /><input type='tel' maxlength='15' placeholder='e.g +2348100000'required></p>
+<p>Email address <br /><br /><input type='email placeholder='e.g john@example.com required></p>
+<p>
+	Date of Birth <br /><br /><input type='date'>
+</p>
+<fieldset>
+<legend> Marital Status</legend>
+<li><label for='married'><input type='radio' name='status'>Married</label></li>
+<li><label for='single'><input type='radio' name='status'>Single</label></li>
+<li><label for='divorced'><input type='radio' name='status'>Divorced</label></li>
+<li><label for='complicated'><input type='radio' name='status'>Complicated</label></li>
+</fieldset>
+<fieldset>
+<legend>Sex</legend> 
+<li><label for='male'><input type='radio' name='sex'>Male</label></li>
+<li><label for='female'><input type='radio' name='sex'>Female</label></li>
+<li><label for='null'><input type='radio' name='sex'>Prefer not to answer</label></li>
+</fieldset>
+<fieldset>
+<legend>Residential Address</legend>
+	<p>Street<br/><br /><input type='text' maxlength='110' placeholder='street name'></p>
+	<p>City <br /> <br /><!--<input type='text' placeholder='e.g Ota'>-->
+     <select id='city'>
+     	<option>Abeokuta</option>
+     	<option selected>Lagos</option>
+     	<option>Ota</option>
+     	<option>Ibadan</option>
+     	<option>Abuja</option>
+     	<option>Ile-Ife</option>
+     	<option>calabar</option>
+     	<option>Ilorin</option>
+     	<option>Ifo</option>
+     	<option>Others</option>
+     </select>
+	</p>
+		<p>State <br /><br />
+        <select id='state'>
+        	<option>Abuja</option>
+        	<option>Abia</option>
+        	<option>Adamawa</option>
+        	<option selected>Akwa-ibom</option>
+        	<option>Bauchi</option>
+        	<option>Bayelsa</option>
+        	<option>Benue</option>
+        	<option>Borno</option>
+        	<option>Crossriver</option>
+        	<option>Delta</option>
+        	<option>Edo</option>
+        	<option>Ekiti</option>
+        	<option>Enugu</option>
+        	<option>Imo</option>
+        	<option>Jigawa</option>
+        	<option>Kano</option>
+        	<option>Kaduna</option>
+        	<option>Kebbi</option>
+        	<option>Kogi</option>
+        	<option>Kwara</option>
+        	<option>Lagos</option>
+        	<option>Nassarawa</option>
+        	<option>Ogun</option>
+        	<option>Ondo</option>
+        	<option>Osun</option>
+        	<option>Oyo</option>
+        	<option>Plateau</option>
+        	<option>Rivers</option>
+        	<option>Sokoto</option>
+        	<option>Taraba</option>
+        	<option>Yobe</option>
+        	<option>Zamfara</option>
+        	<option>Others</option>
+        </select>
+		</p>
+</fieldset>
+<fieldset>
+<!--<p>Date of Birth<br> <input type='date'></p>-->
+<legend>Religion</legend>
+<li><label for='religion'><input type='radio' name='religion'>Islam</label></li>
+<li><label for='religion'><input type='radio' name='religion'>Christianity</label></li>
+<li><label for='religion'><input type='radio' name='religion'>Atheism</label></li>
+<li><label for='religion'><input type='radio' name='religion'>Others</label></li>
+</fieldset>
+<p class='alert'>This is an admission application form and is free, does not attract any fee at all.</p>
+<button type='submit'>Save</button> <button type='reset' value='start-over'>Start over</button>
+</form>
+<div class='tooltip'>
+	<span>For non-Nigerian Residents Click here</span>
+	<div class='tooltiptext'>
+    <p><a href='dropdown.html'>Click this </a>for other opportunities you might be eligible for</p>
+	</div>	
+	</div>
+</body>
+</html>
